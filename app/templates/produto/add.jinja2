@@ -1,0 +1,27 @@
+{% extends '_layout.jinja2' %}
+{% from 'bootstrap5/form.html' import render_field %}
+
+{% block content %}
+    <section class="h-100">
+        <div class="container h-100">
+            <div class="row justify-content-sm-center h-100">
+                <div class="col-xxl-6 col-xl-7 col-lg-7 col-md-9 col-sm-12">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-5">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                {{ form.csrf_token }}
+                                {{ render_field(form.nome) }}
+                                {{ render_field(form.categorias) }}
+                                {{ render_field(form.estoque) }}
+                                {{ render_field(form.ativo) }}
+                                {{ render_field(form.foto) }}
+                                {{ render_field(form.preco) }}
+                                {{ render_field(form.submit) }}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
